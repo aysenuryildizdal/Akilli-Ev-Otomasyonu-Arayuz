@@ -1,0 +1,283 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f0f2f5;
+	color: #333;
+}
+
+.dashboard {
+	width: 90%;
+	margin: 50px auto;
+	padding: 50px;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.weather {
+	display: flex;
+	justify-content: center;
+}
+
+.weather div {
+	text-align: center;
+	margin: 0 25px;
+}
+
+.weather strong {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+.weather p {
+	margin-top: 5px;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+.category {
+	margin-bottom: 30px;
+}
+
+.category ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.category ul li {
+	margin-right: 25px;
+}
+
+.category ul li a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	padding: 8px 14px;
+	border-radius: 6px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category ul li a.active {
+	background-color: blue;
+	color: #fff;
+}
+
+.appliances {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-gap: 25px;
+}
+
+.appliance {
+	border: 1px solid #e1e1e1;
+	border-radius: 8px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.appliance label {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.appliance label strong {
+	margin-top: 12px;
+	font-size: 1.1rem;
+}
+
+.appliance label span {
+	display: block;
+	margin-top: 6px;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+.switch {
+	position: relative;
+	display: inline;
+	width: 50px;
+	height: 30px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: red;
+	transition: .4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 3px;
+	bottom: 3px;
+	background-color: white;
+	transition: .4s;
+	border-radius: 100%;
+}
+
+input:checked+.slider {
+	background-color: green;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #333;
+}
+
+input:checked+.slider:before {
+	transform: translateX(22px);
+}
+
+.climate-control .controls {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.climate-control .controls button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+.climate-control .controls button:hover {
+	background-color: #45a049;
+}
+
+.climate-control .controls button i {
+	font-size: 18px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.climate-control .controls button.decrease {
+	background-color: #f44336;
+}
+
+.climate-control .controls button.decrease:hover {
+	background-color: #e53935;
+}
+
+.climate-control .controls button.increase {
+	background-color: #4CAF50;
+}
+
+.climate-control .controls button.increase:hover {
+	background-color: #45a049;
+}
+
+
+.living-room {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.utilities .controls button {
+	background-color: green;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.utilities .controls button.water-button,
+.utilities .controls button.gas-button {
+	background-color: green;
+}
+
+.utilities .controls button.water-button.closed,
+.utilities .controls button.gas-button.closed {
+	background-color: #f44336;
+}
+
+.utilities .controls button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.pslider-wrapper {
+	position: relative;
+	width: 100px;
+	height: 10px;
+}
+
+.pslider {
+	width: 100%;
+	height: 100%;
+	-webkit-appearance: none;
+	background-color: #ccc;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.pslider-fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: green;
+	width: 0%;
+	transition: width 0.2s ease-in-out;
+}
+
+#check-button {
+	background-color: #4CAF50;
+	/* Yeşil */
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#check-button:hover {
+	background-color: #45a049;
+	/* Koyu yeşil */
+}
